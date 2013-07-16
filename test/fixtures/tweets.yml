@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  xid: 1
+  name: MyString
+  screen_name: MyString
+  text: MyText
+  media_url: MyText
+  profile_image_url: MyText
+  tweeted_at: 2013-07-16 14:49:21
+
+two:
+  xid: 1
+  name: MyString
+  screen_name: MyString
+  text: MyText
+  media_url: MyText
+  profile_image_url: MyText
+  tweeted_at: 2013-07-16 14:49:21
