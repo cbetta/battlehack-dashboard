@@ -9,7 +9,6 @@
 
 config/database.yml
 config/initializers/_variables.rb
-config/initializers/secret_token.rb
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
