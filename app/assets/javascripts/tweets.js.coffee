@@ -39,30 +39,8 @@ $ ->
     while pendingTweets.length > 0
       showTweet()
 
-  startTimer = ->
-    timer = $("#info time")
-    endtime = new Date(timer.attr("datetime"))
-    timezone = timer.attr("timezone")
-    $("#info time").countdown({until: endtime, timezone: timezone, onTick: formatCountdownTime});
-
-
-  formatCountdownTime = (periods) ->
-    hours = doubleDigit(periods[4])
-    minutes = doubleDigit(periods[5])
-    seconds = doubleDigit(periods[6])
-    $('#info time').text(hours + ':' + minutes + ':' + seconds);
-
-  doubleDigit = (n) ->
-    if (n < 10)
-      return ("0" + n)
-    else
-      return n
-
   # this is where things start
   loadTweets()
   setInterval loadTweets, 5000
   setInterval showTweet, 5000
   setInterval updateTimes, 5000
-
-  startTimer()
-
