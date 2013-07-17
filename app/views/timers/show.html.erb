@@ -1,0 +1,26 @@
+<div id="admin">
+  <h1>Timer</h1>
+  <h2><a href="/admin">Back</a></h2>
+
+  <p>
+    Status: <%= Timer.instance.status %> <br>
+  </p>
+
+  <ul>
+    <% if Timer.instance.status == "cleared" %>
+    <li>
+      <%= link_to "Start", timer_url(command: "start"), method: "patch" %>
+    </li>
+    <% end %>
+    <% if Timer.instance.status == "started" %>
+    <li>
+      <%= link_to "Stop", timer_url(command: "stop"), method: "patch" %>
+    </li>
+    <% end %>
+    <% if Timer.instance.status == "ended" %>
+    <li>
+      <%= link_to "Reset", timer_url(command: "reset"), method: "patch" %>
+    </li>
+    <% end %>
+  </ul>
+</div>

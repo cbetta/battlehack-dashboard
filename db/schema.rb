@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130716134921) do
+ActiveRecord::Schema.define(version: 20130717110746) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "timers", force: true do |t|
+    t.string   "status",     default: "cleared"
+    t.datetime "started_at"
+    t.datetime "ends_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tweets", force: true do |t|
     t.string   "xid"

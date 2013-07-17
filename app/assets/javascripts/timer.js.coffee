@@ -1,26 +1,24 @@
 $ ->
-  startTime = null
-  endTime = null
-  timeZone = null
-  started = false
+  lastStatus = null
 
-  loadConfig = ->
-    endTimer = $("#info time.end")
-    startTimer = $("#info time.start")
+  checkTimer = ->
+     $.get("/timer/status", null, updateTimer, "json")
 
-    endTime = new Date(endTimer.attr("datetime"))
-    startTime = new Date(startTimer.attr("datetime"))
+  updateTimer = (timer) ->
+    if timer.status == "started" && lastStatus != timer.status
+      endTime = new Date(timer.ends_at);
+      $("#info time.end").countdown({until: endTime, onTick: formatCountdownTime});
+    else if timer.status == "cleared"
+      stopTimer()
+      formatCountdownTime([0,0,0,0,24,0,0])
+    else if timer.status == "ended"
+      stopTimer()
+      formatCountdownTime([0,0,0,0,0,0,0])
 
-  startTimer = ->
-    started = true
-    $("#info time.end").countdown({until: endTime, onTick: formatCountdownTime});
+    lastStatus = timer.status
 
   stopTimer = ->
-    started  = false
-    if before()
-      $('#info time.end').text("24:00:00")
-    else
-      $('#info time.end').text("00:00:00")
+    $("#info time.end").countdown('destroy');
 
   formatCountdownTime = (periods) ->
     hours = doubleDigit(periods[4])
@@ -34,25 +32,8 @@ $ ->
     else
       return n
 
-  checkTimer = ->
-    if inRange() && !started
-      startTimer()
-    else if !inRange() && started
-      stopTimer()
-
-  inRange = ->
-    !before() && !after()
-
-  before = ->
-    new Date() - startTime < 0
-
-  after = ->
-    new Date() - endTime > 0
 
 
-
-  loadConfig()
-  stopTimer()
   checkTimer()
   setInterval checkTimer, 1000
 
