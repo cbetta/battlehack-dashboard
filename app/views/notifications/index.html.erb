@@ -4,7 +4,7 @@
 
   <p>
     Current notification: <%= Notification.latest.try(:text) %> <br>
-    Visible: <%= Notification.latest.visible %>
+    Visible: <%= Notification.latest.try(:visible) %>
   </p>
 
   <ul>
