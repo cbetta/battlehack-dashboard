@@ -20,13 +20,13 @@ class TimersController < ApplicationController
 
   def status
     stop_timer if timer_ended?
-    render json: timer, only: [:status, :started_at, :ends_at]
+    render json: Timer.first, only: [:status, :started_at, :ends_at]
   end
 
   private
 
   def timer
-    @timer ||= Timer.instance
+    Timer.instance
   end
 
   def stop_timer
