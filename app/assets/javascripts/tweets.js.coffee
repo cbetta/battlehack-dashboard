@@ -29,7 +29,7 @@ $ ->
 
   showTweet = ->
     element = pendingTweets.shift()
-    element.show("slide", updateTimes) if element
+    element.slideDown(updateTimes) if element
 
   updateTimes = ->
     $("abbr").timeago();
