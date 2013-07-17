@@ -1,15 +1,95 @@
 // Place all the styles related to the Dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$light-blue: #0075BF;
+$dark-blue: #00417C;
+$white: #fff;
+$grey: #555;
+
+html {
+  height: 100%;
+}
+
+body {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-weight: 300;
+   height: 100%;
+}
+
+#info {
+  float: left;
+  width: 50%;
+  height: 100%;
+  background-color: $dark-blue;
+  text-align: center;
+
+  img {
+    margin-top: 2em;
+    width: 80%;
+  }
+
+  time {
+    display: block;
+    color: $white;
+    text-align: center;
+    font-family: "Courier New", monospace ;
+    background-color: $white;
+    color: $dark-blue;
+    margin: 0.5em;
+  }
+}
 
 #tweets {
   float: left;
-  background-color: #ddd;
+  background-color: $light-blue;
   width: 50%;
+  height: 100%;
+  overflow: auto;
 
   .tweet {
     display: none;
+    margin: 1em;
+    padding: 1em;
+    background-color: $white;
+    font-size: 20px;
+    overflow: auto;
+
+    .avatar {
+      float: left;
+      margin-right: 1em;
+    }
+
+    h1 {
+      display: inline;
+      font-weight: bold;
+      color: $dark-blue;
+      padding-right: 10px;
+    }
+
+    h2 {
+      display: inline;
+      font-weight: normal;
+      color: $grey;
+      font-size: 0.8em;
+    }
+
+    abbr {
+      display: block;
+      color: $grey;
+      font-size: 0.8em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1em;
+      float: left;
+      width: 70%;
+      line-height: 1.2em;
+
+      strong {
+        color: $light-blue;
+        font-weight: bold;
+      }
+    }
   }
-
-
 }

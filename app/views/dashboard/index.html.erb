@@ -1,14 +1,16 @@
+<div id='info'>
+  <%= image_tag "logo.png" %>
+  <time class='start' datetime="<%= ENV["START_TIME"] %>"></time>
+  <time class='end' datetime="<%= ENV["END_TIME"] %>"></time>
+</div>
+
 <div id="tweets">
   <div class="tweet template" id=''>
     <img src="" class='avatar'>
     <h1 class='name'></h1>
-    <abbr title=""></abbr>
     <h2 class='screen_name'></h2>
+    <abbr title=""></abbr>
     <p class='text'></p>
   </div>
 </div>
 
-<div id='info'>
-  <time class='start' datetime="<%= ENV["START_TIME"] %>"></time>
-  <time class='end' datetime="<%= ENV["END_TIME"] %>"></time>
-</div>

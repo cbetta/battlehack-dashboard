@@ -15,7 +15,7 @@ $ ->
     clone.attr("id", "tweet_"+tweet.xid)
     clone.removeClass("template")
 
-    clone.children(".text").text(tweet.text)
+    clone.children(".text").html(stylize(tweet.text))
     clone.children(".avatar").attr("src", tweet.profile_image_url)
     clone.children("abbr").attr("title", tweet.tweeted_at)
     clone.children(".name").text(tweet.name)
@@ -38,6 +38,11 @@ $ ->
     firstLoad = false
     while pendingTweets.length > 0
       showTweet()
+
+  stylize = (text) ->
+    text = text.replace(/(@\w+)/i, "<strong>$1</strong>")
+    text = text.replace(/(http:\/\/[a-z0-9.\/]+)/i, "<strong>$1</strong>")
+    return text.replace(/(#\w+)/i, "<strong>$1</strong>")
 
   # this is where things start
   loadTweets()
