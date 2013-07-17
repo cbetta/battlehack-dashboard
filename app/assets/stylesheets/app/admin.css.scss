@@ -33,7 +33,6 @@ $white: #fff;
 
   ul  {
     li {
-      // line-height: 1.3em;
       float: left;
 
       a {
@@ -47,5 +46,29 @@ $white: #fff;
         text-decoration: none;
       }
     }
+  }
+
+  form {
+    label {
+      color: $white;
+    }
+
+    textarea {
+      margin: 1em 0;
+      padding: 1em;
+      font-size: 1em;
+      width: 50%;
+      height: 4em;
+    }
+
+    input[type=submit] {
+      cursor: pointer;
+      background-color: $dark-blue;
+      color: $white;
+      border: 0px;
+      border-radius: 4px;
+      padding: 1em;
+    }
+
   }
 }

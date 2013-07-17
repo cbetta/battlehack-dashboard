@@ -1,0 +1,10 @@
+<div id="admin">
+  <h1>Notifications</h1>
+  <h2><a href="/notifications">Back</a></h2>
+
+  <%= form_for(@notification) do |f| %>
+    <%= f.label :text, "Notification text" %> <br>
+    <%= f.text_area :text, placeholder: "Your new notification" %> <br>
+    <%= f.submit "Save and display" %>
+  <% end %>
+</div>

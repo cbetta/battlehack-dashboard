@@ -1,0 +1,19 @@
+<div id="admin">
+  <h1>Notifications</h1>
+  <h2><a href="/admin">Back</a></h2>
+
+  <p>
+    Current notification: <%= Notification.latest.text %> <br>
+    Visible: <%= Notification.latest.visible %>
+  </p>
+
+  <ul>
+    <% if Notification.latest && Notification.latest.visible %>
+      <li><%= link_to "Hide", notification_url(Notification.latest, command: "hide"), method: "patch" %></li>
+    <% elsif Notification.latest %>
+      <li><%= link_to "Show", notification_url(Notification.latest, command: "show"), method: "patch" %></li>
+    <% end %>
+
+    <li><%= link_to "Create new", :new_notification %></li>
+  </ul>
+</div>
