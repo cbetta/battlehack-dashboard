@@ -14,7 +14,7 @@
     <% end %>
     <% if Timer.instance.status == "started" %>
     <li>
-      <%= link_to "Stop", timer_url(command: "stop"), method: "patch" %>
+      <%= link_to "Stop", timer_url(command: "stop"), method: "patch", data: { confirm: "Why?! Are you sure?" } %>
     </li>
     <% end %>
     <% if Timer.instance.status == "ended" %>
