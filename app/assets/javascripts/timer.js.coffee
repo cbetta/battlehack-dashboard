@@ -5,7 +5,6 @@ $ ->
      $.get("/timer/status", null, updateTimer, "json")
 
   updateTimer = (timer) ->
-    console.log timer.status
     if timer.status == "started" && lastStatus != timer.status
       endTime = new Date(timer.ends_at);
       $("#info time.end").countdown({until: endTime, onTick: formatCountdownTime});

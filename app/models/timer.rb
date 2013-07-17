@@ -9,6 +9,6 @@ class Timer < ActiveRecord::Base
   private
 
   def set_ends_at
-    self.ends_at = started_at + 10.seconds unless started_at.nil?
+    self.ends_at = started_at + 24.hours unless started_at.nil?
   end
 end
