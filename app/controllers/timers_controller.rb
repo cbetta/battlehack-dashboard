@@ -26,7 +26,7 @@ class TimersController < ApplicationController
   private
 
   def timer
-    Timer.instance
+    @timer ||= Timer.instance
   end
 
   def stop_timer
