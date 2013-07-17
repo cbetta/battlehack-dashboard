@@ -6,6 +6,11 @@ Dashboard::Application.routes.draw do
     end
   end
 
+  resources :notifications do
+    collection do
+      get "latest"
+    end
+  end
   get '/admin', to: 'admin#index'
 
   root "dashboard#index"

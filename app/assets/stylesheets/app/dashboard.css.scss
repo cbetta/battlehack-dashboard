@@ -5,6 +5,7 @@ $light-blue: #0075BF;
 $dark-blue: #00417C;
 $white: #fff;
 $grey: #555;
+$light-grey: #ddd;
 
 #info {
   float: left;
@@ -90,4 +91,34 @@ $grey: #555;
       max-height: 30%;
     }
   }
+}
+
+
+#notification {
+  width: 100%;
+  height: 100%;
+  background-color: $light-blue;
+  color: $white;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  font-size: 4em;
+  display: none;
+
+  div {
+    padding: 10%;
+
+  }
+
+  &.minified {
+    position: static;
+    height: auto;
+    text-align: left;
+
+    div {
+      padding: 1em;
+    }
+  }
+
 }
