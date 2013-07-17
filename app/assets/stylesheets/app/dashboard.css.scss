@@ -54,6 +54,11 @@ body {
     font-size: 20px;
     overflow: auto;
 
+    .content {
+      float: left;
+      width: 70%;
+    }
+
     .avatar {
       float: left;
       margin-right: 1em;
@@ -82,14 +87,17 @@ body {
 
     p {
       font-size: 1.2em;
-      float: left;
-      width: 70%;
       line-height: 1.2em;
 
       strong {
         color: $light-blue;
         font-weight: bold;
       }
+    }
+
+    .media {
+      margin-top: 1em;
+      max-height: 30%;
     }
   }
 }
