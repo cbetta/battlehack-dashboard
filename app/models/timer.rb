@@ -3,7 +3,7 @@ class Timer < ActiveRecord::Base
   before_save :set_ends_at
 
   def self.instance
-    @@timer ||= Timer.first || Timer.create(status: "cleared")
+    Timer.first || Timer.create(status: "cleared")
   end
 
   private
