@@ -40,9 +40,9 @@ $ ->
       showTweet()
 
   stylize = (text) ->
-    text = text.replace(/(@\w+)/i, "<strong>$1</strong>")
-    text = text.replace(/(http:\/\/[a-z0-9.\/]+)/i, "<strong>$1</strong>")
-    return text.replace(/(#\w+)/i, "<strong>$1</strong>")
+    text = text.replace(/(@\w+)/ig, "<strong>$1</strong>")
+    text = text.replace(/(http:\/\/[a-z0-9.\/]+)/ig, "<strong>$1</strong>")
+    return text.replace(/(#\w+)/ig, "<strong>$1</strong>")
 
   # this is where things start
   loadTweets()
