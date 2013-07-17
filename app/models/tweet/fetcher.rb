@@ -6,7 +6,7 @@ class Tweet
       determine_last_xid
       search_tweets
       save_tweets
-    rescue Twitter:Error => ex
+    rescue Twitter::Error => ex
       Rails.logger.error "Could not fetch tweets: #{ex.message}"
     end
 
