@@ -8,7 +8,7 @@ $ ->
   showTweets = (tweets) ->
     for tweet in tweets
       createTweet(tweet) if isNewTweet(tweet)
-    showFirstTime() if firstLoad
+    showFirstTime() if firstLoad || hasBacklog()
 
   createTweet = (tweet) ->
     clone = $(".tweet.template").clone()
@@ -43,6 +43,9 @@ $ ->
     firstLoad = false
     while pendingTweets.length > 0
       showTweet()
+
+  hasBacklog = ->
+    pendingTweets.length > 10
 
   stylize = (text) ->
     text = text.replace(/(@\w+)/ig, "<strong>$1</strong>")
