@@ -3,7 +3,7 @@
   <h2><a href="/admin">Back</a></h2>
 
   <p>
-    Current notification: <%= Notification.latest.text %> <br>
+    Current notification: <%= Notification.latest.try(:text) %> <br>
     Visible: <%= Notification.latest.visible %>
   </p>
 
