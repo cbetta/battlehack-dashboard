@@ -19,7 +19,7 @@ class TimersController < ApplicationController
   end
 
   def status
-    stop_timer if Time.now > timer.ends_at && timer.status == "started"
+    stop_timer if timer_ended?
     render json: timer, only: [:status, :started_at, :ends_at]
   end
 
@@ -42,6 +42,10 @@ class TimersController < ApplicationController
   def reset_timer
     timer.status = "cleared"
     timer.started_at = nil
+  end
+
+  def timer_ended?
+    timer.status == "started" && Time.now > timer.ends_at
   end
 
 end
