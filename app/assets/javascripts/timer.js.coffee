@@ -32,8 +32,6 @@ $ ->
     else
       return n
 
-
-
   checkTimer()
   setInterval checkTimer, 1000
 

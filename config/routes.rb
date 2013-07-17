@@ -11,6 +11,13 @@ Dashboard::Application.routes.draw do
       get "latest"
     end
   end
+
+  resource :statistic do
+    member do
+      get "latest"
+    end
+  end
+
   get '/admin', to: 'admin#index'
 
   root "dashboard#index"

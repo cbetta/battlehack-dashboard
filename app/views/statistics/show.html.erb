@@ -1,0 +1,14 @@
+<div id="admin">
+  <h1>Statistics</h1>
+  <h2><a href="/admin">Back</a></h2>
+
+  <p>
+    Current statistics: <br>
+
+    <%= simple_format(Statistic.instance.text) %>
+  </p>
+
+  <ul>
+    <li><%= link_to "Edit", :edit_statistic %></li>
+  </ul>
+</div>

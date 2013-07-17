@@ -54,6 +54,6 @@ $ ->
 
   # this is where things start
   loadTweets()
-  setInterval loadTweets, 5000
+  setInterval loadTweets, 20000
   setInterval showTweet, 5000
   setInterval updateTimes, 5000

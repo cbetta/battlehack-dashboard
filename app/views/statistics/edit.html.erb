@@ -1,0 +1,10 @@
+<div id="admin">
+  <h1>Statistics</h1>
+  <h2><a href="/statistics">Back</a></h2>
+
+  <%= form_for(@statistic, url: statistic_path) do |f| %>
+    <%= f.label :text, "Statistic text" %> <br>
+    <%= f.text_area :text, placeholder: "Write some markdown here" %> <br>
+    <%= f.submit "Save and display" %>
+  <% end %>
+</div>

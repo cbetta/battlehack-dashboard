@@ -54,4 +54,4 @@ $ ->
 
 
   checkNotifications()
-  setInterval checkNotifications, 1000
+  setInterval checkNotifications, 5000

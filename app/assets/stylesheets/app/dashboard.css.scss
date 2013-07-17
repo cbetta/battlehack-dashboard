@@ -26,7 +26,35 @@ $light-grey: #ddd;
     font-family: "Courier New", monospace ;
     background-color: $white;
     color: $dark-blue;
-    margin: 0.5em;
+    margin: 0.1em 0.5em 0.5em 0.5em;
+  }
+
+  #statistics {
+    color: $white;
+    font-size: 2em;
+    text-align: left;
+    margin: 1em 2em;
+    display: block;
+    line-height: 1.2em;
+
+    ul {
+      margin-left: 1em;
+      list-style: disc outside;
+
+      li {
+        margin-bottom: 0.8em;
+      }
+    }
+
+    p {
+      margin: 1em 0;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-weight: bold;
+      color: $light-grey;
+      margin-bottom: 0.5em;
+    }
   }
 }
 
@@ -117,7 +145,7 @@ $light-grey: #ddd;
     text-align: left;
 
     div {
-      padding: 1em;
+      padding: 0.5em 1em;
     }
   }
 
