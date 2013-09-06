@@ -9,7 +9,8 @@
   <ul>
     <% if Timer.instance.status == "cleared" %>
     <li>
-      <%= link_to "Start", timer_url(command: "start"), method: "patch" %>
+      <%= text_field_tag :time, "24:00:00" %> <br>
+      <%= link_to "Start", timer_url(command: "start"), method: "patch", id: 'start_timer' %>
     </li>
     <% end %>
     <% if Timer.instance.status == "started" %>
