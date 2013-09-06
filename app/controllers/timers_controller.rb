@@ -36,7 +36,11 @@ class TimersController < ApplicationController
 
   def start_timer
     timer.status = "started"
-    timer.started_at = Time.now
+    if params[:time]
+      timer.started_at = Time.now - (24.hours - seconds_for(params[:time]).seconds)
+    else
+      timer.started_at = Time.now
+    end
   end
 
   def reset_timer
@@ -46,6 +50,11 @@ class TimersController < ApplicationController
 
   def timer_ended?
     timer.status == "started" && Time.now > timer.ends_at
+  end
+
+  def seconds_for time
+    parts = time.split(":")
+    (parts[-3].to_i*3600) + (parts[-2].to_i*60) + (parts[-1].to_i)
   end
 
 end
