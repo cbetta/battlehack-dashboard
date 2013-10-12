@@ -9,62 +9,6 @@
   <div id='statistics'>
 
   </div>
-
-  <script>
-  var streamname = "battlehack";
-  var w_size = 671;
-  var h_size = 369;
-  if((navigator.userAgent.indexOf('iPad') != -1) || (navigator.userAgent.indexOf('iPhone') != -1) || (navigator.userAgent.indexOf('Android') != -1))
-  {
-  document.write('<video width="' + w_size + '" height="' + h_size + '" controls="true" poster="//storage.planetpics.ru/specials/battlehack/battlehack_splash.png"><source src="http://stream.planetpics.ru/serdoboff-live/'+streamname+'/playlist.m3u8" type="video/mp4" /> </video>');
-  } else if(navigator.userAgent.indexOf('Windows Phone 8.0') != -1){
-  document.write('<video width="' + w_size + '" height="' + h_size + '" controls="true" poster="//storage.planetpics.ru/specials/battlehack/battlehack_splash.png"><source src="http://stream.planetpics.ru/serdoboff-live/'+streamname+'/Manifest" type="video/mp4" /> </video>');
-  }
-  else
-  {
-  document.write('<a class="player" style="display:block;width:' + w_size + 'px;height:' + h_size + 'px;margin:10px auto" id="light"></a>');
-
-  flowplayer("light", "http://releases.flowplayer.org/swf/flowplayer.commercial-3.2.16.swf", {
-  key: ['#$9aff2372a49859f8388', '#$d0ecc511af935548afd'],
-
-  clip: {
-  url: streamname,
-  live: true,
-  provider: 'rtmp',
-  },
-  canvas: {
-  backgroundImage: 'url(//storage.planetpics.ru/specials/battlehack/battlehack_splash.png)'
-  },
-
-  plugins: {
-  controls: {
-  url: "http://releases.flowplayer.org/swf/flowplayer.controls-3.2.15.swf",
-
-  buttonColor: 'rgba(0, 0, 0, 0.9)',
-  buttonOverColor: '#000000',
-  backgroundColor: '#D7D7D7',
-  backgroundGradient: 'medium',
-  sliderColor: '#FFFFFF',
-
-  sliderBorder: '1px solid #808080',
-  volumeSliderColor: '#FFFFFF',
-  volumeBorder: '1px solid #808080',
-
-  timeColor: '#000000',
-  durationColor: '#535353'
-  },
-
-  rtmp: {
-  url: "http://releases.flowplayer.org/swf/flowplayer.rtmp-3.2.12.swf",
-  netConnectionUrl: 'rtmp://stream.planetpics.ru/serdoboff-live',
-  inBufferSeek: false,
-  },
-
-  },
-
-  });
-  }
-  </script>
 </div>
 
 <div id="tweets">
