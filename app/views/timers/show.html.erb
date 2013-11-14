@@ -23,7 +23,7 @@
     <% end %>
     <% if Timer.instance.status == "paused" %>
     <li>
-      <%= text_field_tag :time, Timer.instance.remaining.strftime("%H:%M:%S") %> <br>
+      <%= text_field_tag :time, Timer.instance.remaining %> <br>
       <%= link_to "Resume", timer_url(command: "resume"), method: "patch", id: 'start_timer' %>
       <%= link_to "Stop", timer_url(command: "stop"), method: "patch", data: { confirm: "Why?! Are you sure?" } %>
     </li>

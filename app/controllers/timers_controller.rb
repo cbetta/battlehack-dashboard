@@ -47,6 +47,11 @@ class TimersController < ApplicationController
     end
   end
 
+  def resume_timer
+    timer.status = "started"
+    timer.started_at = Time.now - (24.hours - seconds_for(Timer.instance.remaining).seconds)
+  end
+
   def reset_timer
     timer.status = "cleared"
     timer.started_at = nil

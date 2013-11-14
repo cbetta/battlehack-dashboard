@@ -7,7 +7,8 @@ class Timer < ActiveRecord::Base
   end
 
   def remaining
-    Time.at(24.hours - (updated_at - started_at)).utc
+    return "00:00:00" if self.status != "paused"
+    Time.at(24.hours - (updated_at - started_at)).utc.strftime("%H:%M:%S")
   end
 
   private

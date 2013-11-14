@@ -16,9 +16,7 @@ $ ->
       formatCountdownTime([0,0,0,0,0,0,0])
     else if timer.status == "paused"
       stopTimer()
-      time = timer.remaining.split("T")
-      time = time[1].substr(0, time[1].length - 1);
-      $('#info time.end').text(time);
+      $('#info time.end').text(timer.remaining);
 
     lastStatus = timer.status
 
