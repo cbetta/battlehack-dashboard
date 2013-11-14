@@ -6,6 +6,10 @@ class Timer < ActiveRecord::Base
     Timer.first || Timer.create(status: "cleared")
   end
 
+  def remaining
+    Time.at(24.hours - (updated_at - started_at)).utc
+  end
+
   private
 
   def set_ends_at

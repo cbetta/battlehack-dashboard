@@ -12,6 +12,10 @@ class TimersController < ApplicationController
       stop_timer
     when "reset"
       reset_timer
+    when "pause"
+      pause_timer
+    when "resume"
+      resume_timer
     end
     timer.save!
 
@@ -20,7 +24,7 @@ class TimersController < ApplicationController
 
   def status
     stop_timer if timer_ended?
-    render json: timer, only: [:status, :started_at, :ends_at]
+    render json: timer, only: [:status, :started_at, :ends_at], methods: [:remaining]
   end
 
   private
@@ -46,6 +50,10 @@ class TimersController < ApplicationController
   def reset_timer
     timer.status = "cleared"
     timer.started_at = nil
+  end
+
+  def pause_timer
+    timer.status = "paused"
   end
 
   def timer_ended?
