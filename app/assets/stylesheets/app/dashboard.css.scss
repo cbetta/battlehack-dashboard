@@ -2,16 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $light-blue: #00417C;
-$dark-blue: #1A1F34;
+$dark-blue: #00447C;
 $white: #fff;
 $grey: #555;
 $light-grey: #ddd;
+
+#white {
+  background-color: $white;
+  display: block;
+}
 
 #info {
   float: left;
   width: 50%;
   height: 100%;
-  background-color: $dark-blue;
+  background-color: $white;
   text-align: center;
 
   img {
@@ -21,16 +26,15 @@ $light-grey: #ddd;
 
   time {
     display: block;
-    color: $white;
     text-align: center;
-    font-family: "Courier New", monospace ;
     background-color: $white;
     color: $dark-blue;
     margin: 0.1em 0.5em 0.5em 0.5em;
   }
 
   #statistics {
-    color: $white;
+    background-color: $white;
+    color: $dark-blue;
     font-size: 2em;
     text-align: left;
     margin: 1em 2em;
@@ -47,7 +51,8 @@ $light-grey: #ddd;
     }
 
     p {
-      margin: 1em 0;
+      padding: 0.1em;
+      margin: 1em;
     }
 
     h1, h2, h3, h4, h5 {
@@ -60,7 +65,7 @@ $light-grey: #ddd;
 
 #tweets {
   float: left;
-  background-color: $light-blue;
+  background-color: $dark-blue;
   width: 50%;
   height: 100%;
   overflow: auto;
