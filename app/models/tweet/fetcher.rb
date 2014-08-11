@@ -18,14 +18,14 @@ class Tweet
 
     def search_tweets
       if @last_xid.nil?
-        @tweets = Twitter.search(ENV["TWITTER_TAG"], :include_entities => true)
+        @tweets = twitter.search(ENV["TWITTER_TAG"], :include_entities => true)
       else
-        @tweets = Twitter.search(ENV["TWITTER_TAG"], :include_entities => true, :since_id => @last_xid)
+        @tweets = twitter.search(ENV["TWITTER_TAG"], :include_entities => true, :since_id => @last_xid)
       end
     end
 
     def save_tweets
-      @tweets.statuses.each {|status| save status }
+      @tweets.each {|status| save status }
     end
 
     def save status
@@ -34,9 +34,16 @@ class Tweet
         tweet.name = status.user.name
         tweet.screen_name = status.user.screen_name
         tweet.text = status.text
-        tweet.media_url = status.media[0].try(:media_url)
-        tweet.profile_image_url = status.user.profile_image_url.sub('_normal','_bigger')
+        tweet.media_url = status.media[0].try(:media_url).to_s
+        tweet.profile_image_url = status.user.profile_image_url.to_s.sub('_normal','_bigger')
         tweet.tweeted_at = status.created_at
+      end
+    end
+
+    def twitter
+      @twitter ||= Twitter::REST::Client.new do |config|
+        config.consumer_key = ENV['TWITTER_CONSUMER_KEY']
+        config.consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
       end
     end
   end

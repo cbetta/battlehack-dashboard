@@ -8,9 +8,6 @@
 /.bundle
 .DS_Store
 
-config/database.yml
-config/initializers/_variables.rb
-
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
