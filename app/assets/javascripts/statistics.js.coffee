@@ -1,4 +1,5 @@
 $ ->
+  previous_statistics = null
   loadStatistics = ->
     $.get("/statistic/latest", null, showStatistics, "json")
 
